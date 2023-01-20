@@ -134,6 +134,9 @@ def reference(definition: typing.Union[str, collections.Callable], explicit: boo
     if module_reference == 'builtins':
         return definition.__name__  # e.g. reference(str) -> 'str'
 
+    if isinstance(definition, type):
+        return f'{module_reference}.{definition.__name__}'
+
     return definition.__class__.__name__  # as is
 
 

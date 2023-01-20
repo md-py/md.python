@@ -33,6 +33,13 @@ class TestReference:
         # assert
         assert reference_ == 'md.python._python.reference'
 
+    def test_reference_implicit_class(self) -> None:  # white/positive
+        # act
+        reference_ = md.python.reference(definition=TestReference, explicit=False)
+
+        # assert
+        assert reference_ == 'python.TestReference'
+
     def test_reference_implicit(self) -> None:  # white/positive
         # act
         reference_ = md.python.reference(definition=md.python.reference, explicit=False)
