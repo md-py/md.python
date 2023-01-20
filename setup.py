@@ -5,7 +5,7 @@ with open('readme.md') as fh:
 
 setuptools.setup(
     name='md.python',
-    version='1.0.0',
+    version='1.1.0',
     description='component that provides python definition API',
     long_description=long_description,
     long_description_content_type='text/markdown',
