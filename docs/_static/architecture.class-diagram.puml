@@ -1,0 +1,34 @@
+@startuml
+
+skinparam class {
+  BackgroundColor #ebebeb
+  ArrowColor      #333
+  BorderColor     #333
+}
+
+skinparam lineType ortho
+
+interface PythonExceptionInterface {}
+
+class ReferenceException extends RuntimeError implements PythonExceptionInterface  {
+  + {static} INVALID_QUALNAME = 1
+  + {static} IMPORT_ERROR = 2
+  + {static} DIFFERENT_OBJECT = 3
+  ---
+  + code: int = 0
+  ---
+  + {static} as_invalid_qualname() -> ReferenceException
+  + {static} as_import_error() -> ReferenceException
+  + {static} as_different_object() -> ReferenceException
+}
+
+class DereferenceException extends RuntimeError implements PythonExceptionInterface{
+  + {static} INVALID_QUALNAME = 1
+  + {static} IMPORT_ERROR = 2
+  ---
+  + code: int = 0
+  ---
+  + {static} as_invalid_qualname() -> DereferenceException
+  + {static} as_import_error() -> DereferenceException
+}
+@enduml
